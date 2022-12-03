@@ -1,12 +1,14 @@
 import uuid
 from django.urls import reverse
 from django.db import models
+from imagekit.models import ImageSpecField
+from imagekit.processors import ResizeToFill
 
 class Category(models.Model):
     id = models.UUIDField(
         primary_key=True,
         default=uuid.uuid4,
-        editable=False)
+        editable=True)
     name = models.CharField(max_length=250, unique=True)
     description = models.TextField(blank = True)
     image = models.ImageField(upload_to = 'category', blank=True)
@@ -21,7 +23,7 @@ class Category(models.Model):
         return reverse('shop:products_by_category', args=[self.id])
     
     def __str__(self):
-        return self.name
+        return str(self.name)
 
 class Product(models.Model):
     id = models.UUIDField(
@@ -37,6 +39,10 @@ class Product(models.Model):
     available = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True, blank = True, null= True)
     updated = models.DateTimeField(auto_now=True, blank = True, null= True)
+    image_thumbnail = ImageSpecField(source='image',
+        processors=[ResizeToFill(200,200)],
+        format="JPEG",
+        options={'quality':80} )
 
     class Meta:
         ordering = ('name',)
@@ -47,4 +53,21 @@ class Product(models.Model):
         return reverse('shop:product_detail', args=[self.category.id, self.id])
     
     def __str__(self):
-        return self.name
+        return str(self.name)
+
+    def imageURL(self):
+        if self.image:
+            return self.image.url
+        else:
+            return 'static/images/No-Image.jpg'
+
+
+class Slider(models.Model):
+    image = models.ImageField(upload_to="slide")
+    title = models.CharField(max_length=100)
+    sub_title = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.title
+
+

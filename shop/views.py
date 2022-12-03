@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Category, Product
+from .models import Category, Product, Slider
 from django.core.paginator import Paginator, EmptyPage, InvalidPage
 
 # Create your views here.
@@ -20,8 +20,10 @@ def prod_list(request, category_id=None):
     except (EmptyPage, InvalidPage):
         products =  paginator.page(paginator.num_pages)
     
+    slider = Slider.objects.all()
     
-    return render(request, 'shop/category.html',{'category':category, 'prods':products}) 
+    
+    return render(request, 'shop/category.html',{'category':category, 'prods':products, 'slider':slider}) 
 
 
 def product_detail(request, category_id, product_id):

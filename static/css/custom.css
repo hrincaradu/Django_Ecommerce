@@ -12,7 +12,7 @@
 
 /****Footer****/
 .my_footer {
-    background-color: #f8f9fa;
+
     height: 60px;
 }
 .my_footer p {
@@ -36,8 +36,9 @@
 
 /****Category page****/
 .my_image {
-    width: 100%;
-    height: auto;
+    width: 500px;
+    height: 200px;
+    
 }
 .my_title {
     font-size: 16px;
@@ -164,3 +165,6 @@
 	letter-spacing: .2em;
 	font-size: 12px;
 }
+
+
+

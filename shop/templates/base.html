@@ -7,19 +7,26 @@
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> <!--Animation-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" crossorigin="anonymous">
+    <!-- google font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Coiny&display=swap" rel="stylesheet">
     <meta name="description" content="{% block metadescription %}{% endblock %}">
     <title>{% block title %}{% endblock %}</title>
 </head>
-<body>
-    <div class="container">
-        <div class="container-fluid bg-light navbar-fixed-top my_top_navbar_div">
+<body style="background: url({%static 'images/banner.webp'%});">
+    <div class="container bg-white">
+        <div class="container-fluid mb-1 navbar-expand-lg navbar-nav my_top_navbar_div">
             {% include 'top-navbar.html' %}
         </div>
 
         {% include 'header.html' %}
         {% include 'navbar.html' %}
+        
         {% block content %}
+        {% include 'slider.html' %}
         {% endblock %}
         
         {% include 'footer.html' %}

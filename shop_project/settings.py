@@ -37,16 +37,19 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'imagekit',
+    # local
     'accounts',
     'shop',
     'search_app',
     'cart',
-    'stripe',
     'order',
     'vouchers',
+    'slider',
     # 3rd party
     'crispy_forms',
     'crispy_bootstrap5',
+    'stripe',
 ]
 
 MIDDLEWARE = [
