@@ -12,7 +12,7 @@
 
 /****Footer****/
 .my_footer {
-    background-color: #f8f9fa;
+
     height: 60px;
 }
 .my_footer p {
@@ -38,6 +38,7 @@
 .my_image {
     width: 100%;
     height: auto;
+    max-width:min-content;
 }
 .my_title {
     font-size: 16px;
@@ -164,3 +165,15 @@
 	letter-spacing: .2em;
 	font-size: 12px;
 }
+
+#logo{
+	max-width: 200px;
+	max-height: 200px;
+
+}
+
+#banner {
+    width: 100px;
+    height:100px;
+}
+

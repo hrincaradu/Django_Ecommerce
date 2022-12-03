@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand navbar-light bg-dark">
     <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             ariacontrols="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -6,24 +6,24 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                <li class="nav-item dropdown text-white">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" ariaexpanded="false">
                         Shop
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="{% url 'shop:all_products' %}">All Products</a></li>
+                    <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item text-white" href="{% url 'shop:all_products' %}">All Products</a></li>
                             {% for cat in links %}
-                                <li><a class="dropdown-item" href="{{cat.get_absolute_url}}">{{cat.name}}</a></li>
+                                <li><a class="dropdown-item text-white" href="{{cat.get_absolute_url}}">{{cat.name}}</a></li>
                             {% endfor %}
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Your Cart</a>
+                    <a class="nav-link text-white" href="#">Your Cart</a>
                 </li>
                 {% if item_count > 0 %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'cart:cart_detail' %}"><i 
+                    <li class="nav-item text-white">
+                        <a class="nav-link text-white" href="{% url 'cart:cart_detail' %}"><i 
                         class="fas fa-shopping-cart">({{item_count}})</i></a>
                     </li>
                 {% endif %}           
@@ -31,7 +31,7 @@
             </ul>
             <form class="d-flex" action="{% url 'search_app:searchResult' %}" method="get">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q">
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
     </div>
