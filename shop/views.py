@@ -23,7 +23,6 @@ def prod_list(request, category_id=None):
     slider = Slider.objects.all()
     
     
-    
     return render(request, 'shop/category.html',{'category':category, 'prods':products, 'slider':slider}) 
 
 
