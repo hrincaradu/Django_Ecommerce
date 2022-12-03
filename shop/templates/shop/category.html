@@ -33,8 +33,38 @@
             <p class="text-justify">{{category.description}}</p>
         </div>
     {% else %}
-        <img width="100" class="my_image my_image_padding" src="{% static 'images/banner.jpg' %}" alt="Our Products Collection">
-        <img width="100" length="100" align="right" class="my_image my_image_padding" src="{% static 'images/banner_fancy.png' %}" alt="Our Products Collection">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            {% for object in slider%}
+            <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
+                <img src="{{object.image.url}}" style="height:500px;" class="testi-overly d-block w-100" alt="sliderImg">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1 class="animate__animated
+                    {% if forloop.counter0 == 0 %}
+                    animate__fadeInDown
+                    {% endif %}
+                    {% if forloop.revcounter == 1 %}
+                    animate__bounce
+                    {% endif %}
+                    {% if forloop.revcounter == 2 %}
+                    animate__fadeInRight
+                    {% endif %}">{{object.title}}</h1>
+                    <h3 class="animate__animated animate__zoomIn">{{object.sub_title}}</h3>
+                    <a href="{{object.link}}" class="button animate__animated animate__zoomIn mt-3 py-3 px-5 btn font-weight-bold">{{object.action_name}}</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+        
     </div>
     <br>
     <div>

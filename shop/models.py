@@ -62,3 +62,12 @@ class Product(models.Model):
             return 'static/images/No-Image.jpg'
 
 
+class Slider(models.Model):
+    image = models.ImageField(upload_to="slide")
+    title = models.CharField(max_length=100)
+    sub_title = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.title
+
+
