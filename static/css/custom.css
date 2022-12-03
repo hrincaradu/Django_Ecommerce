@@ -36,9 +36,9 @@
 
 /****Category page****/
 .my_image {
-    width: 100%;
-    height: auto;
-    max-width:min-content;
+    width: 500px;
+    height: 200px;
+    
 }
 .my_title {
     font-size: 16px;
@@ -166,14 +166,6 @@
 	font-size: 12px;
 }
 
-#logo{
-	max-width: 200px;
-	max-height: 200px;
 
-}
 
-#banner {
-    width: 100px;
-    height:100px;
-}
 

@@ -40,7 +40,7 @@ class Product(models.Model):
     created = models.DateTimeField(auto_now_add=True, blank = True, null= True)
     updated = models.DateTimeField(auto_now=True, blank = True, null= True)
     image_thumbnail = ImageSpecField(source='image',
-        processors=[ResizeToFill(300,300)],
+        processors=[ResizeToFill(200,200)],
         format="JPEG",
         options={'quality':80} )
 
