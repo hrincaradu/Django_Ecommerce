@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, FormView
 from django.contrib.auth.models import Group
 from .forms import CustomUserCreationForm
 from .models import CustomUser
@@ -9,6 +9,7 @@ from .models import CustomUser
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm
     template_name = 'registration/signup.html'
+    success_url = reverse_lazy('login')
 
     def post(self, request, *args, **kwargs):
         form = CustomUserCreationForm(request.POST)
@@ -21,3 +22,4 @@ class SignUpView(CreateView):
             return redirect('login')
         else:
             return render(request, self.template_name, {'form' : form })
+
