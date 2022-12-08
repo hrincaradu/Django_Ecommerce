@@ -1,5 +1,4 @@
 
-
 # Create your views here.
 from django.shortcuts import render, get_object_or_404
 from .models import Order, OrderItem
@@ -7,7 +6,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import View
 
 
-# Create your views here.
 def thanks(request, order_id):
     if order_id:
         customer_order = get_object_or_404(Order, id=order_id)

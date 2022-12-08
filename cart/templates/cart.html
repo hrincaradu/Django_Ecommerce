@@ -133,6 +133,7 @@
                             <input type="submit" value="Apply">
                             {% csrf_token %}
                         </form>
+                        <br>
     
 
                     </tbody>
@@ -142,9 +143,9 @@
                         <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                              data-key="{{ data_key }}"
                              data-amount="{{ stripe_total }}"
-                             data-name="Perfect Cushion Shop"
+                             data-name="PC Depot 2022"
                              data-description="{{ description }}"
-                             data-image="{% static 'images/logo.png' %}"
+                             data-image="{% static 'images/logo-no-background.png' %}"
                              data-locale="auto"
                              data-currency="eur"
                              data-shipping-address="true"

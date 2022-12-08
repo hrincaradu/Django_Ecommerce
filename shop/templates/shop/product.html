@@ -26,17 +26,78 @@
                     <div>
                         <h1 class="my_prod_title">{{product.name}}</h1>
                         <p>€{{product.price}}</p>
+                        <p>Rating: {{product.get_rating}} <i class="fas fa-star text-warning"></i> </p>
                         <p class="my_title">Product Description</p>
                         <p class="text-justify my_prod_text">{{product.description}}</p>
                         {% if product.stock == 0%}
                             <p class="text-justify my_prod_text text-danger"><b>Out of Stock</b></p>
                         {% else %}
-                            <a class="btn btn-primary"  href="{% url 'cart:add_cart' product.id %}">Add to Cart <i class="fa-solid fa-cart-plus"></i></a>
+                            <a class="btn btn-primary"  href="{% url 'cart:add_cart' product.id %}">Add to Cart </a>
                         {% endif %}
-                    </div>
+                    </div> 
+                    <br>
+                    <br>
+                    
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-md-9">
+    
+    
+                    {%if request.user.is_authenticated %}
+                    <h5>Leave a review of {{product.name}}.</h5>
+                    <br>
+                    <form method="POST" action=".">
+                        {%csrf_token%}
+                        
+                        <div class="form-group">
+                            <label>Rating:</label>
+                            <select name="rating">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3" selected>3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                    <br>
+                        <div class="form-group">
+                            Review title:
+                            <input type="text" name="title">
+                            <br>
+                            <br>
+                            <label>Comment</label>
+                            <br>
+                            <textarea name="content"></textarea>
+                        </div>
+                        <br>
+                        <div>
+                            <button class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                    <br>
+                    {%endif%}
+                    
+                    {% for review in product.reviews.all %}
+                        <div class="px-4 py-6">
+                            <strong>Review by:</strong>
+                            {{ review.user}}
+                            <br>
+                            <strong>Rating:</strong> {{review.rating}}/5
+                            <br>
+                            <strong>Title: </strong>{{review.title}}
+                            <br>
+                            <br>
+                            <strong>Comment:</strong><br>
+                            {{ review.content }}
+                            <br>
+                            <br>
+                            <div class="bg-dark"></div>>
+                        </div>
+
+                    {% endfor %}
                 </div>
             </div>
-        </div>
-    </div>
 
 {% endblock %}

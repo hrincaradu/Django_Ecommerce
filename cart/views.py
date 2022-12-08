@@ -49,7 +49,7 @@ def cart_detail(request, total=0, counter=0, cart_items = None):
         pass
     stripe.api_key = settings.STRIPE_SECRET_KEY
     stripe_total = int(total*100)
-    description = 'Online Shop - New Order'
+    description = 'PC Depot - New Order'
     data_key = settings.STRIPE_PUBLISHABLE_KEY
     voucher_apply_form = VoucherApplyForm()
 

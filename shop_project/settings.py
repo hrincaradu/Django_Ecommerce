@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'cart',
     'order',
     'vouchers',
-    'slider',
     # 3rd party
     'crispy_forms',
     'crispy_bootstrap5',
@@ -77,6 +76,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'shop.context_processors.menu_links',
                 'cart.context_processors.counter',
+                'django.template.context_processors.static',
             ],
         },
     },
