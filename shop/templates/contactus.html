@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.title
+{
+    color: #fff;
+}
+.contact {
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.contact .contactForm
+{
+    position: relative;
+    width: 700px;
+    margin-top: 20px;
+}
+.contact .contactForm .row
+{
+    width: 100%;
+    display: flex;
+}
+.contact .contactForm .row .col50
+{
+    width: 50%;
+    margin-top: 15px;
+}
+.contact .contactForm .row .col100
+{
+    width: 95%;
+    margin: 15px;
+    text-align: center;
+}
+.contact .contactForm .row input,
+.contact .contactForm .row textarea
+{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background: #111;
+    color: #fff;
+    font-size: 16px;
+    resize: none;
+
+}
+.contact .contactForm .row textarea
+{
+    height: 100px;
+}
+.contact .contactForm .row input[type="submit"]
+{
+    background: #00bcd4;
+    color: #fff;
+    padding: 10px 30px;
+    display: inline-block;
+    font-weight: 500;
+    letter-spacing: 2px;
+    cursor: pointer;
+    max-width: 150px;
+}
+
+@media (max-width: 991px)
+{
+    .contact .contactForm
+    {
+        width: 100%;
+    }
+    .contact .contactForm .row
+    {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .contact .contactForm .row .col50
+    {
+        width: 100%;
+    }
+}
+
+.social-media-icons-white a
+{
+    color: #aaaaaa;
+    font-size: 2rem;
+    transition: color 0.2s;
+    
+}
+.social-media-icons-white a:hover
+{
+    color: #333333;
+}
+
+</style>
+<script src="https://kit.fontawesome.com/e4cf8c1779.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <section class="contact" id="contact">
+        <div class="title" >
+            <h3>Contact Us.</h3>
+            <p>If you may have any questions about our productcs. You can contact us via Contact Us form down bellow. </p>
+        </div>
+        <div class="contactForm">
+            <div class="row">
+                <div class="col50">
+                    <input type="text" name="" placeholder="First Name">
+                </div>
+                <div class="col50">
+                    <input type="text" name="" placeholder="Last Name">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col50">
+                    <input type="text" name="" placeholder="Email">
+                </div>
+                <div class="col50">
+                    <input type="text" name="" placeholder="Mobile No.">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col100">
+                    <textarea placeholder="Message"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col100">
+                    <!-- <form method="post" action="xzad66@gmail.com" >
+                        <input type="submit" value="Send Email" /> 
+                    </form> -->
+                    <input type="submit" value="Send" onclick="alert('Demo only, submit not available.')" > 
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="socials">
+            
+        <div class="social-media-icons-white d-flex justify-content-evenly bg-dark">
+            <a href="https://facebook.com">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="https://instagram.com">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://twitter.com">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="https://tiktok.com">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+            <a href="https://youtube.com">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+        </div>
+
+    </div>
+
+</body>
+</html>
