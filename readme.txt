@@ -4,6 +4,7 @@ Andrei Mogorean
 - Configured necessary settings in settings.py to ensure project is running 
 - Developed base apps, models, views and templates for each app
 - Added "products" and "categories" via Django Admin to enhance the 
+- Created Contact Us form and added social-media links.
 E-Commerce aspect of the website
 
 
