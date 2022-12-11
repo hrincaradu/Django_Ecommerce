@@ -17,3 +17,4 @@ below the navbar by importing JavaScript scripts and using Django logic in HTML
 from 1 to 5, commenting and storing the user inputs in the database for them to be displayed below the respective products.
 
 
+http://hrincaradu.pythonanywhere.com/
